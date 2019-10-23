@@ -21,7 +21,6 @@ public class UI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.text = "Score: ";
         SetupSlider(PlayerStartingHealth);
         currentPlayerHealth = PlayerStartingHealth;
     }
@@ -49,7 +48,7 @@ public class UI : MonoBehaviour
 
     public void SetScore(int enemyScore)
     {
-        scoreText.text = "Score: " + enemyScore;
+        scoreText.text = enemyScore.ToString("00000");
     }
 
     public void SetupSlider(int playerHealth)
@@ -62,11 +61,11 @@ public class UI : MonoBehaviour
     public void UpdateSlider(int currentHealth)
     {
         slider.value = currentHealth;
-        if (currentHealth >= 50)
+        if (currentHealth == 3)
             playerHealth.color = Color.green;
-        if (currentHealth < 50)
+        if (currentHealth == 2)
             playerHealth.color = Color.yellow;
-        if (currentHealth < 25)
+        if (currentHealth == 1)
             playerHealth.color = Color.red;
     }
 
