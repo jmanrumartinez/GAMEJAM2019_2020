@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour
 {
@@ -84,13 +85,17 @@ public class UI : MonoBehaviour
     {
         Time.timeScale = 0;
         pauseMenu.SetActive(true);
-        
     }
 
     public void ContinueGame()
     {
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0);
     }
 
 }
