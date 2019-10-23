@@ -40,8 +40,8 @@ public class GunScript : MonoBehaviour
 
 
 
-        projectile.GetComponent<Rigidbody>().velocity += transform.right * bulletSpeed;
-
+        projectile.GetComponent<Rigidbody>().velocity += -transform.right * bulletSpeed;
+        GetComponentInParent<Rigidbody>().velocity += transform.parent.transform.right * (bulletSpeed/2);
         
         yield return new WaitForSeconds(coolDown);
         GetComponentInParent<PlayerScript>().hasShot = false;

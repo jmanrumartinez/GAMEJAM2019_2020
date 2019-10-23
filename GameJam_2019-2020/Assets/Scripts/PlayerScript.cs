@@ -36,13 +36,14 @@ public class PlayerScript : MonoBehaviour
 
 
         angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        transform.eulerAngles = new Vector3(0, 0, angle - 90);
 
         //Controls, remember z = up/down   x = left/right
 
         if (Input.GetMouseButtonDown(0) && !hasShot)
         {
             StartCoroutine(gun.GetComponent<GunScript>().Shoot());
+            
         }
 
     }
