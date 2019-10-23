@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 enum State {
     PATROLING, 
-    ATTACKING, 
+    EXPLODING, 
 }
 
 public class Enemy : MonoBehaviour
@@ -13,12 +13,8 @@ public class Enemy : MonoBehaviour
     [Header("Enemy")]
     private State state;
     private float health = 100.0f;
-    private int damage;
+    private float damage = 50.0f;
     private float movementSpeed = 5.0f; 
-    private float distanceBetweenEnemyPlayer;
-    private RaycastHit2D hit; 
-
-    public float distanceToAttack = 50.0f;
 
     [Header("Player")]
     public GameObject player; 
@@ -29,7 +25,6 @@ public class Enemy : MonoBehaviour
     }
 
     private void Update() {
-        Debug.DrawRay(transform.position, playerTransform.position, Color.red);
         Behaviour(state);
     }
 
@@ -52,18 +47,20 @@ public class Enemy : MonoBehaviour
             case State.PATROLING:
                 MoveToPlayer();
                 break;
-            case State.ATTACKING:
-                // TODO: Cuando el jugador entre en el radio de poder atacar, atacará al enemigo
+            case State.EXPLODING:
+                // 1. Decrease player health
+                // 2. Play explode animation
+                // 3. Destroy GameObject (byself)
                 break;
             default:
-                Debug.Log("Not defined");
+                Debug.Log("State not defined");
                 break; 
         }
     }
 
     private void OnTriggerEnter(Collider collision) {
         if (collision.gameObject.tag == "Player") {
-            ChangeState(State.ATTACKING); 
+            ChangeState(State.EXPLODING); 
         }
     }
 }
