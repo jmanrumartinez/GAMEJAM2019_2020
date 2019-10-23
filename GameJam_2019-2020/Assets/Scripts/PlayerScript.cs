@@ -13,8 +13,8 @@ public class PlayerScript : MonoBehaviour
 
     public bool hasShot;
 
-    Vector2 mousePos;
-    Vector2 myPos;
+    Vector3 mousePos;
+    Vector3 myPos;
 
 
     // Start is called before the first frame update
@@ -34,12 +34,13 @@ public class PlayerScript : MonoBehaviour
         mousePos.x = Input.mousePosition.x - myPos.x;
         mousePos.y = Input.mousePosition.y - myPos.y;
 
+
         angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
         //Controls, remember z = up/down   x = left/right
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !hasShot)
+        if (Input.GetMouseButtonDown(0) && !hasShot)
         {
             StartCoroutine(gun.GetComponent<GunScript>().Shoot());
         }
