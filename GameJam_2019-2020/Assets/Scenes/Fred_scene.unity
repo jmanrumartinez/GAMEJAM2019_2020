@@ -596,6 +596,16 @@ PrefabInstance:
       propertyPath: assaultBulletSpread
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 844726448671210003, guid: f3569fa86a2d1294b94a5168167d2108,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 844726448671210005, guid: f3569fa86a2d1294b94a5168167d2108,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 844726448671210000, guid: f3569fa86a2d1294b94a5168167d2108,
         type: 3}
       propertyPath: m_Enabled
@@ -610,6 +620,11 @@ PrefabInstance:
         type: 3}
       propertyPath: hasAssault
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9147420990028255289, guid: f3569fa86a2d1294b94a5168167d2108,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6324570123835629351, guid: f3569fa86a2d1294b94a5168167d2108,
         type: 3}
