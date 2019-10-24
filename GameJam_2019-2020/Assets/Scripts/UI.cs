@@ -34,7 +34,9 @@ public class UI : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
-        SetupSlider(PlayerStartingHealth);
+        if(slider != null)
+            SetupSlider(PlayerStartingHealth);
+
         currentPlayerHealth = PlayerStartingHealth;
         isPaused = false;
         cooldown = false;
@@ -45,9 +47,12 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SetScore(score);
-        UpdateSlider(currentPlayerHealth);
-        UpdateCooldownSlider();
+        if(scoreText != null)
+            SetScore(score);
+        if(slider != null)
+            UpdateSlider(currentPlayerHealth);
+        if(cooldownSlider != null)
+            UpdateCooldownSlider();
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
             RecieveDamage(DamageDealt);
