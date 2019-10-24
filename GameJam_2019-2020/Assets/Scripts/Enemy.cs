@@ -13,8 +13,9 @@ public class Enemy : MonoBehaviour
     [Header("Enemy")]
     private State state;
     private float health = 100.0f;
-    private float damage = 50.0f;
-    private float movementSpeed = 5.0f; 
+    private float damage = 1.0f;
+    private float movementSpeed = 5.0f;
+    private int score = 50; 
 
     [Header("Player")]
     public GameObject player; 
@@ -26,6 +27,10 @@ public class Enemy : MonoBehaviour
 
     private void Update() {
         Behaviour(state);
+    }
+
+    public int GetScore() {
+        return score; 
     }
 
     public void RecieveDamage(float damage) {
@@ -58,9 +63,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider collision) {
-        if (collision.gameObject.tag == "Player") {
-            ChangeState(State.EXPLODING); 
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "Player") {
+            ChangeState(State.EXPLODING);
         }
     }
 }
