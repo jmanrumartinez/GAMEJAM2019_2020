@@ -9,9 +9,12 @@ public class PlayerScript : MonoBehaviour
     public int healthPnt;
     public int scorePnt;
 
-    public float angle;
+    private float angle;
 
-    public bool hasShot;
+    [HideInInspector]public bool hasShot;
+
+    public bool hasShotgun;
+    public bool hasAssault;
 
     Vector3 mousePos;
     Vector3 myPos;
@@ -40,10 +43,14 @@ public class PlayerScript : MonoBehaviour
 
         //Controls, remember z = up/down   x = left/right
 
-        if (Input.GetMouseButtonDown(0) && !hasShot)
+        if (Input.GetMouseButtonDown(0) && !hasShot && hasShotgun)
         {
-            StartCoroutine(gun.GetComponent<GunScript>().Shoot());
+            StartCoroutine(gun.GetComponent<GunScript>().ShotgunShoot());
             
+        }
+        else if (Input.GetMouseButton(0) && hasAssault)
+        {
+            StartCoroutine(gun.GetComponent<GunScript>().AssaultShoot());
         }
 
     }

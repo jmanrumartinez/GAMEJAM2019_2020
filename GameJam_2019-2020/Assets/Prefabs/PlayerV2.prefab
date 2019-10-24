@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 844726448671106609}
   - component: {fileID: 844726448670336529}
   - component: {fileID: 844726448669205713}
-  - component: {fileID: 844726448671210006}
   - component: {fileID: 844726448671210000}
   - component: {fileID: 5323518141256134994}
+  - component: {fileID: 6742275442481564878}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -91,22 +91,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!54 &844726448671210006
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 844726448671210001}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 56
-  m_CollisionDetection: 0
 --- !u!114 &844726448671210000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,8 +106,9 @@ MonoBehaviour:
   gun: {fileID: 9147420990028255289}
   healthPnt: 0
   scorePnt: 0
-  angle: 0
   hasShot: 0
+  hasShotgun: 0
+  hasAssault: 0
 --- !u!136 &5323518141256134994
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -138,6 +123,22 @@ CapsuleCollider:
   m_Height: 0.023443786
   m_Direction: 1
   m_Center: {x: -0.0012578522, y: -0.0008314371, z: -0.00023172279}
+--- !u!54 &6742275442481564878
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844726448671210001}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &844726448671210003
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +165,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844726448671210003}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0010566872, y: 0.02542374, z: -0.014746221}
+  m_LocalPosition: {x: -0.0010566872, y: 0.025423734, z: -0.014746221}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 844726448671106609}
@@ -242,7 +243,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844726448671210005}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.000993044, y: 0.018135117, z: -0.0065077352}
+  m_LocalPosition: {x: 0.000993044, y: 0.018135114, z: -0.006507733}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 844726448671106609}
@@ -320,7 +321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844726448671210007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.014556246, y: -0.0059638745, z: -0.0042223707}
+  m_LocalPosition: {x: 0.014556246, y: -0.0059638745, z: -0.0042223698}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 844726448671106609}
@@ -399,7 +400,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844726448671210009}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0142276995, y: 0.006607708, z: 0.005460991}
+  m_LocalPosition: {x: 0.014227698, y: 0.006607708, z: 0.00546099}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 844726448671106609}
@@ -511,8 +512,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9147420990028255289}
   m_LocalRotation: {x: 0.70710677, y: -0.7071068, z: -0.000000059604645, w: -0.000000059604645}
-  m_LocalPosition: {x: 0.00025085764, y: 0.022926116, z: -0.012583734}
-  m_LocalScale: {x: 0.018750384, y: 0.0048924265, z: 0.0045633614}
+  m_LocalPosition: {x: 0.00025085764, y: 0.022926109, z: -0.012583731}
+  m_LocalScale: {x: 0.018750388, y: 0.004892428, z: 0.0045633623}
   m_Children: []
   m_Father: {fileID: 844726448671106609}
   m_RootOrder: 0
@@ -587,6 +588,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39b7a3ba246c8ab48ad5f1c0d94f63bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolDown: 1
-  bulletSpeed: 20
+  shotgunCooldown: 0
+  assaultCooldown: 0
+  bulletSpread: 0
+  shotgunBulletSpeed: 0
+  assaultBulletSpeed: 0
   bullet: {fileID: 0}
