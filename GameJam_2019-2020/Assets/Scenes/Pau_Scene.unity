@@ -2006,8 +2006,8 @@ MonoBehaviour:
   PlayerStartingHealth: 3
   currentPlayerHealth: 0
   DamageDealt: 1
-  timerCD: 0
-  readyCD: 0
+  timer: 0
+  ready: 0
 --- !u!114 &1482022372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2287,7 +2287,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.3180008, y: 0.04399872}
+  m_AnchoredPosition: {x: -0.31799316, y: 0.04399872}
   m_SizeDelta: {x: 0.36999512, y: 0.2480011}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1680166139
@@ -2611,7 +2611,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781364294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.1227772}
+  m_LocalPosition: {x: -0.2, y: 0.85, z: -2.1227772}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children:
   - {fileID: 455168774}
@@ -2653,7 +2653,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.31040815, y: 0.67532843}
   m_AnchorMax: {x: 0.688, y: 0.7908657}
-  m_AnchoredPosition: {x: 1.2745819, y: -0.1499939}
+  m_AnchoredPosition: {x: 1.2745972, y: -0.1499939}
   m_SizeDelta: {x: 3.0899963, y: 6.4820023}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1834326536
@@ -2727,7 +2727,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.07}
   m_AnchorMax: {x: 1, y: 0.68}
-  m_AnchoredPosition: {x: 0.016899109, y: 0.107421875}
+  m_AnchoredPosition: {x: 0.01689148, y: 0.107421875}
   m_SizeDelta: {x: 0.27199936, y: 0.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1894143035
