@@ -69,6 +69,8 @@ public class UI : MonoBehaviour
 
     }
 
+    #region GameUI
+
     public void SetScore(int enemyScore)
     {
         scoreText.text = enemyScore.ToString("00000");
@@ -119,12 +121,17 @@ public class UI : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public bool IsPaused()
     {
         return isPaused;
+    }
+
+    public void ExitGame()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void SetDeathScore()
@@ -148,5 +155,21 @@ public class UI : MonoBehaviour
             }
         }
     }
+
+    #endregion
+
+    #region MainMenuUI
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
+
+    #endregion
 
 }
