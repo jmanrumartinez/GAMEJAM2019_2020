@@ -37,12 +37,12 @@ public class GunScript : MonoBehaviour
         //direction.Normalize();
 
         GameObject projectile1 = (GameObject)Instantiate(bullet, gameObject.transform.position, gameObject.transform.parent.transform.rotation);
-        GameObject projectile2 = (GameObject)Instantiate(bullet, gameObject.transform.position, gameObject.transform.parent.transform.rotation);
-        GameObject projectile3 = (GameObject)Instantiate(bullet, gameObject.transform.position, gameObject.transform.parent.transform.rotation);
+        GameObject projectile2 = (GameObject)Instantiate(bullet, gameObject.transform.position, gameObject.transform.parent.transform.rotation * Quaternion.Euler(1,1,20));
+        GameObject projectile3 = (GameObject)Instantiate(bullet, gameObject.transform.position, gameObject.transform.parent.transform.rotation * Quaternion.Euler(1,1,-20));
 
-        projectile1.GetComponent<Rigidbody>().velocity += -transform.right * bulletSpeed;
-        projectile2.GetComponent<Rigidbody>().velocity += -transform.right * bulletSpeed;
-        projectile3.GetComponent<Rigidbody>().velocity += -transform.right * bulletSpeed;
+        projectile1.GetComponent<Rigidbody>().velocity += projectile1.transform.up * bulletSpeed;
+        projectile2.GetComponent<Rigidbody>().velocity += projectile2.transform.up * bulletSpeed;
+        projectile3.GetComponent<Rigidbody>().velocity += projectile3.transform.up * bulletSpeed;
 
         GetComponentInParent<Rigidbody>().velocity += -transform.parent.transform.up * bulletSpeed;
         
