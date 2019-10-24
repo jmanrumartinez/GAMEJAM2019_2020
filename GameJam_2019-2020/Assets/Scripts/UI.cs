@@ -8,12 +8,14 @@ public class UI : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject deathMenu;
+    
 
     public Image bgSlider;
     public Image playerHealth;
     public Slider slider;
     public Slider cooldownSlider;
     public GameObject cdSLider;
+    public GameObject imgShotgun;
 
     public Text scoreText;
     public Text deathScoreText;
@@ -31,6 +33,7 @@ public class UI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         SetupSlider(PlayerStartingHealth);
         currentPlayerHealth = PlayerStartingHealth;
         isPaused = false;
@@ -138,18 +141,22 @@ public class UI : MonoBehaviour
     {
         deathMenu.SetActive(true);
         deathScoreText.text = score.ToString("00000");
+        Time.timeScale = 0;
+        isPaused = true;        
     }
 
     public void UpdateCooldownSlider()
     {
         if (cooldown)
         {
+            imgShotgun.SetActive(true);
             cdSLider.SetActive(true);
             cooldownSlider.value = timer;
             timer += Time.deltaTime;
             if (timer >= ready)
             {
                 cooldown = false;
+                imgShotgun.SetActive(false);
                 cdSLider.SetActive(false);
                 timer = 0;
             }
