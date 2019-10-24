@@ -456,12 +456,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6742275442481564878, guid: f3569fa86a2d1294b94a5168167d2108,
+        type: 3}
+      propertyPath: m_Drag
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 844726448671210011, guid: f3569fa86a2d1294b94a5168167d2108,
         type: 3}
       propertyPath: m_Name
       value: PlayerV2
       objectReference: {fileID: 0}
     - target: {fileID: 844726448671210011, guid: f3569fa86a2d1294b94a5168167d2108,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 844726448671210001, guid: f3569fa86a2d1294b94a5168167d2108,
         type: 3}
       propertyPath: m_TagString
       value: Player
@@ -484,7 +494,7 @@ PrefabInstance:
     - target: {fileID: 844726448671106619, guid: f3569fa86a2d1294b94a5168167d2108,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 844726448671106619, guid: f3569fa86a2d1294b94a5168167d2108,
         type: 3}
@@ -499,7 +509,7 @@ PrefabInstance:
     - target: {fileID: 844726448671106619, guid: f3569fa86a2d1294b94a5168167d2108,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 844726448671106619, guid: f3569fa86a2d1294b94a5168167d2108,
         type: 3}
@@ -509,7 +519,7 @@ PrefabInstance:
     - target: {fileID: 844726448671106619, guid: f3569fa86a2d1294b94a5168167d2108,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 844726448671106619, guid: f3569fa86a2d1294b94a5168167d2108,
         type: 3}
@@ -551,6 +561,80 @@ PrefabInstance:
       propertyPath: bullet
       value: 
       objectReference: {fileID: 1624774995}
-    m_RemovedComponents:
-    - {fileID: 1439635750121245448, guid: f3569fa86a2d1294b94a5168167d2108, type: 3}
+    - target: {fileID: 9147420990028255288, guid: f3569fa86a2d1294b94a5168167d2108,
+        type: 3}
+      propertyPath: bulletSpread
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9147420990028255288, guid: f3569fa86a2d1294b94a5168167d2108,
+        type: 3}
+      propertyPath: shotgunBulletSpeed
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 9147420990028255288, guid: f3569fa86a2d1294b94a5168167d2108,
+        type: 3}
+      propertyPath: assaultBulletSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 9147420990028255288, guid: f3569fa86a2d1294b94a5168167d2108,
+        type: 3}
+      propertyPath: shotgunCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9147420990028255288, guid: f3569fa86a2d1294b94a5168167d2108,
+        type: 3}
+      propertyPath: assaultCooldown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9147420990028255288, guid: f3569fa86a2d1294b94a5168167d2108,
+        type: 3}
+      propertyPath: shotgunBulletSpread
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9147420990028255288, guid: f3569fa86a2d1294b94a5168167d2108,
+        type: 3}
+      propertyPath: assaultBulletSpread
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 844726448671210003, guid: f3569fa86a2d1294b94a5168167d2108,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 844726448671210005, guid: f3569fa86a2d1294b94a5168167d2108,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 844726448671210000, guid: f3569fa86a2d1294b94a5168167d2108,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 844726448671210000, guid: f3569fa86a2d1294b94a5168167d2108,
+        type: 3}
+      propertyPath: hasShotgun
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 844726448671210000, guid: f3569fa86a2d1294b94a5168167d2108,
+        type: 3}
+      propertyPath: hasAssault
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9147420990028255289, guid: f3569fa86a2d1294b94a5168167d2108,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324570123835629351, guid: f3569fa86a2d1294b94a5168167d2108,
+        type: 3}
+      propertyPath: hasShotgun
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324570123835629351, guid: f3569fa86a2d1294b94a5168167d2108,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3569fa86a2d1294b94a5168167d2108, type: 3}

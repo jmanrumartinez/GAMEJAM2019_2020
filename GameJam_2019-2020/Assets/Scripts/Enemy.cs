@@ -12,20 +12,38 @@ public class Enemy : MonoBehaviour
 {
     [Header("Enemy")]
     private State state;
-    private float health = 100.0f;
-    private float damage = 50.0f;
-    private float movementSpeed = 5.0f; 
+    public float health = 100.0f;
+    public float damage = 1.0f;
+    public float movementSpeed = 5.0f;
+    public int score = 50;
+    public Animator animator;
+    public GameObject explosion;
+    public GameObject enemyMesh;
 
     [Header("Player")]
     public GameObject player; 
-    public Transform playerTransform; 
+    public Transform playerTransform;
+
+    [Header("GameManager")]
+    public GameManager gameManager;
 
     private void Start() {
-        ChangeState(State.PATROLING);         
+        player = GameObject.FindWithTag("Player");
+        playerTransform = player.transform;
+        ChangeState(State.PATROLING);
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     private void Update() {
         Behaviour(state);
+    }
+
+    public void Kill() {
+        Destroy(this.gameObject); 
+    }
+
+    public int GetScore() {
+        return score; 
     }
 
     public void RecieveDamage(float damage) {
@@ -49,8 +67,9 @@ public class Enemy : MonoBehaviour
                 break;
             case State.EXPLODING:
                 // 1. Decrease player health
-                // 2. Play explode animation
-                // 3. Destroy GameObject (byself)
+                Instantiate(explosion, transform.position, transform.rotation);
+                gameManager.DecreaseSpanwedEnemies();
+                Destroy(this.gameObject); 
                 break;
             default:
                 Debug.Log("State not defined");
@@ -58,9 +77,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider collision) {
-        if (collision.gameObject.tag == "Player") {
-            ChangeState(State.EXPLODING); 
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "Player") {
+            ChangeState(State.EXPLODING);
         }
     }
 }
