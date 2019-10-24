@@ -604,12 +604,12 @@ PrefabInstance:
     - target: {fileID: 844726448671210000, guid: f3569fa86a2d1294b94a5168167d2108,
         type: 3}
       propertyPath: hasShotgun
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 844726448671210000, guid: f3569fa86a2d1294b94a5168167d2108,
         type: 3}
       propertyPath: hasAssault
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6324570123835629351, guid: f3569fa86a2d1294b94a5168167d2108,
         type: 3}

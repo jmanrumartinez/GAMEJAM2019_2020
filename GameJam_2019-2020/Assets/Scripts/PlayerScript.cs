@@ -11,7 +11,7 @@ public class PlayerScript : MonoBehaviour
 
     private float angle;
 
-    [HideInInspector]public bool hasShot;
+   public bool hasShot;
 
     public bool hasShotgun;
     public bool hasAssault;
@@ -30,6 +30,25 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (hasShotgun)
+            {
+                hasShot = false;
+                hasShotgun = false;
+                hasAssault = true;
+
+            }
+
+            else if (hasAssault)
+            {
+                hasShot = false;
+                hasShotgun = true;
+                hasAssault = false;
+
+            }
+        }
 
         
         myPos = Camera.main.WorldToScreenPoint(gameObject.transform.position);
