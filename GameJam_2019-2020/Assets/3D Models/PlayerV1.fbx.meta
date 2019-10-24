@@ -1,10 +1,20 @@
 fileFormatVersion: 2
-guid: a87aa5dfd08437843b04dcc7c93c0649
+guid: 9b66de6a3ceabd740b34a37b5f725aaa
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
+    100000: Cube.033
+    100002: Cube.034
+    100004: Cube.035
+    100006: Cube.037
+    100008: Cube.038
+    100010: //RootNode
+    400000: Cube.033
+    400002: Cube.034
+    400004: Cube.035
+    400006: Cube.037
+    400008: Cube.038
+    400010: //RootNode
     2100000: BaseWhite
     2100002: GreyDetailing
     2100004: RedStripe
@@ -12,9 +22,21 @@ ModelImporter:
     2100008: Material.005
     2100010: Diodes
     2100012: BlackDetailing
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cube.009
+    2300000: Cube.033
+    2300002: Cube.034
+    2300004: Cube.035
+    2300006: Cube.037
+    2300008: Cube.038
+    3300000: Cube.033
+    3300002: Cube.034
+    3300004: Cube.035
+    3300006: Cube.037
+    3300008: Cube.038
+    4300000: Cube.033
+    4300002: Cube.034
+    4300004: Cube.035
+    4300006: Cube.037
+    4300008: Cube.038
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -46,7 +68,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.1
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1

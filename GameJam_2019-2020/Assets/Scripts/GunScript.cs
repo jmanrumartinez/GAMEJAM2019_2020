@@ -36,16 +36,21 @@ public class GunScript : MonoBehaviour
         Vector2 direction = target - new Vector2(transform.position.x, transform.position.y);
         //direction.Normalize();
 
-        GameObject projectile = (GameObject)Instantiate(bullet, gameObject.transform.position, gameObject.transform.parent.transform.rotation);
+        GameObject projectile1 = (GameObject)Instantiate(bullet, gameObject.transform.position, gameObject.transform.parent.transform.rotation);
+        GameObject projectile2 = (GameObject)Instantiate(bullet, gameObject.transform.position, gameObject.transform.parent.transform.rotation);
+        GameObject projectile3 = (GameObject)Instantiate(bullet, gameObject.transform.position, gameObject.transform.parent.transform.rotation);
 
+        projectile1.GetComponent<Rigidbody>().velocity += -transform.right * bulletSpeed;
+        projectile2.GetComponent<Rigidbody>().velocity += -transform.right * bulletSpeed;
+        projectile3.GetComponent<Rigidbody>().velocity += -transform.right * bulletSpeed;
 
-
-        projectile.GetComponent<Rigidbody>().velocity += -transform.right * bulletSpeed;
         GetComponentInParent<Rigidbody>().velocity += -transform.parent.transform.up * bulletSpeed;
         
         yield return new WaitForSeconds(coolDown);
         GetComponentInParent<PlayerScript>().hasShot = false;
 
-        //Destroy(projectile.gameObject);
+        Destroy(projectile1.gameObject);
+        Destroy(projectile2.gameObject);
+        Destroy(projectile3.gameObject);
     }
 }
