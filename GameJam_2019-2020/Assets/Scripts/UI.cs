@@ -7,23 +7,36 @@ using UnityEngine.SceneManagement;
 public class UI : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public GameObject deathMenu;
 
     public Image bgSlider;
     public Image playerHealth;
     public Slider slider;
+    public Slider cooldownSlider;
+    public GameObject cdSLider;
 
     public Text scoreText;
+    public Text deathScoreText;
 
     public int score;
     public int PlayerStartingHealth;
     public int currentPlayerHealth;
     public int DamageDealt;
+    private bool cooldown;
+    public float timer;
+    public float ready;
+
+    public static bool isPaused;
 
     // Start is called before the first frame update
     void Start()
     {
         SetupSlider(PlayerStartingHealth);
         currentPlayerHealth = PlayerStartingHealth;
+        isPaused = false;
+        cooldown = false;
+        timer = 0;
+        ready = 1;
     }
 
     // Update is called once per frame
@@ -31,12 +44,16 @@ public class UI : MonoBehaviour
     {
         SetScore(score);
         UpdateSlider(currentPlayerHealth);
+        UpdateCooldownSlider();
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
             RecieveDamage(DamageDealt);
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
             EnemyKilled(20);
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            cooldown = true;
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -45,6 +62,11 @@ public class UI : MonoBehaviour
             else if (pauseMenu.activeInHierarchy)
                 ContinueGame();
         }
+
+ 
+        if (currentPlayerHealth <= 0)
+            SetDeathScore();
+
     }
 
     public void SetScore(int enemyScore)
@@ -85,17 +107,46 @@ public class UI : MonoBehaviour
     {
         Time.timeScale = 0;
         pauseMenu.SetActive(true);
+        isPaused = true;
     }
 
     public void ContinueGame()
     {
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
+        isPaused = false;
     }
 
     public void RestartGame()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public bool IsPaused()
+    {
+        return isPaused;
+    }
+
+    public void SetDeathScore()
+    {
+        deathMenu.SetActive(true);
+        deathScoreText.text = score.ToString("00000");
+    }
+
+    public void UpdateCooldownSlider()
+    {
+        if (cooldown)
+        {
+            cdSLider.SetActive(true);
+            cooldownSlider.value = timer;
+            timer += Time.deltaTime;
+            if (timer >= ready)
+            {
+                cooldown = false;
+                cdSLider.SetActive(false);
+                timer = 0;
+            }
+        }
     }
 
 }
