@@ -60,6 +60,9 @@ public class UI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2))
             EnemyKilled(20);
 
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+            EnemyKilled(40);
+
         if (Input.GetKeyDown(KeyCode.Alpha3))
             cooldown = true;
 
@@ -144,10 +147,13 @@ public class UI : MonoBehaviour
 
     public void SetDeathScore()
     {
-        deathMenu.SetActive(true);
-        deathScoreText.text = score.ToString("00000");
-        Time.timeScale = 0;
-        isPaused = true;        
+        if (deathMenu != null)
+        {
+            deathMenu.SetActive(true);
+            deathScoreText.text = score.ToString("00000");
+            Time.timeScale = 0;
+            isPaused = true;        
+        }
     }
 
     public void UpdateCooldownSlider()
